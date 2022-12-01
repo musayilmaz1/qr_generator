@@ -2,7 +2,13 @@ from PIL import ImageTk, Image
 
 from main import olustur
 import tkinter as tk
+from tkinter import filedialog
 from PIL import Image
+
+
+'''main = open("main.py",'r')
+readMain = main.read()
+exec(readMain)'''
 
 ekran = tk.Tk()
 ekran.resizable(width=True, height=True)
@@ -33,7 +39,8 @@ giris.pack(padx=150, pady=10)
 
 
 def goster():
-    load = Image.open("qr.jpg")
+    deger=giris.get()
+    load=olustur(deger)
     render = ImageTk.PhotoImage(load)
     img = tk.Label(frame_ust, image=render)
     img.place(x=100, y=250)
@@ -43,10 +50,11 @@ def goster():
 def gonder():
     deger = giris.get()
     olustur(deger)
+
 def indir():
-    qr_image=Image.open("qr.jpg")
-    qr_image.save("C:\qr\qrcode.jpg")
-    qr_image.show()
+    deger = giris.get()
+    filepath=filedialog.asksaveasfile(defaultextension=".png")
+    olustur(deger).save(filepath.name)
 
 
 

@@ -12,6 +12,7 @@ qr = qrcode.QRCode(
 print("url giriniz")
 
 
+
 def olustur(deger):
     if len(str(deger)) == 0:
         print("herhangi birsey yazmadiniz.")
@@ -20,9 +21,11 @@ def olustur(deger):
 
     qr.make(fit=True)
     img = qr.make_image(image_factory=StyledPilImage, color_mask=RadialGradiantColorMask())
-    img.save("qr.jpg")
     qr.clear()
-    print("selam")
+    return img
+
+
+
 
 
 
