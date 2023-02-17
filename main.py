@@ -12,7 +12,6 @@ qr = qrcode.QRCode(
 print("url giriniz")
 
 
-
 def olustur(deger):
     if len(str(deger)) == 0:
         print("herhangi birsey yazmadiniz.")

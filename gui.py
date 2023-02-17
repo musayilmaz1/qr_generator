@@ -1,5 +1,4 @@
 from PIL import ImageTk, Image
-
 from main import olustur
 import tkinter as tk
 from tkinter import filedialog
@@ -55,11 +54,6 @@ def indir():
     deger = giris.get()
     filepath=filedialog.asksaveasfile(defaultextension=".png")
     olustur(deger).save(filepath.name)
-
-
-
-
-
 
 dugme = tk.Button(frame_ust, text="QR KOD OLUSTUR", command=gonder)
 dugme.pack(pady=20)
